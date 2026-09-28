@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { useLang } from '../lib/LanguageContext';
 import { useTheme } from '../lib/ThemeContext';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,6 +12,8 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const { lang, t, toggleLang } = useLang();
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: t.nav.home, id: 'home' },
@@ -43,18 +46,26 @@ export default function Navbar() {
 
   const scrollTo = (id) => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      const navOffset = 75;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({
-        top: id === 'home' ? 0 : offsetPosition,
-        behavior: 'smooth'
-      });
-      window.history.pushState(null, '', `#${id}`);
-      setActiveSection(id);
+    
+    if (location.pathname !== '/') {
+      navigate(id === 'home' ? '/' : `/#${id}`);
+      return;
     }
+
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const navOffset = 75;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+        window.scrollTo({
+          top: id === 'home' ? 0 : offsetPosition,
+          behavior: 'smooth'
+        });
+        window.history.pushState(null, '', `#${id}`);
+        setActiveSection(id);
+      }
+    }, 100);
   };
 
   const navBackground = isScrolled ? 'bg-background/40 backdrop-blur-xl border-b border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.05)]' : 'bg-linear-to-b from-foreground/75 to-transparent';
