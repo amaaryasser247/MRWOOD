@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   MRWOOD design tokens (UI/UX Pro Max - Liquid Glass / Scroll Storytelling)
+   Palette: Premium black + gold accent
+------------------------------------------------------------------- */
+@theme {
+  --color-primary: #1C1917;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #44403C;
+  --color-on-secondary: #FFFFFF;
+  --color-accent: #A16207;
+  --color-on-accent: #FFFFFF;
+  --color-background: #E6D8C3;
+  --color-foreground: #2C221B;
+  --color-card: #EFE3D3;
+  --color-card-foreground: #2C221B;
+  --color-muted: #E8ECF0;
+  --color-muted-foreground: #475569;
+  --color-border: #D6D3D1;
+  --color-destructive: #DC2626;
+  --color-on-destructive: #FFFFFF;
+  --color-ring: #1C1917;
+
+  --font-display: "Kufam", "Cormorant", "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Montserrat", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-arabic-display: "Kufam", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-arabic-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(161, 98, 7, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(28, 25, 23, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(161, 98, 7, 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(28, 25, 23, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-muted);
+    color: var(--color-foreground);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  [lang="ar"] {
+    font-family: var(--font-arabic-body);
+    font-size: 1.25em;
+    line-height: 1.6;
+  }
+
+  [lang="ar"] h1,
+  [lang="ar"] h2,
+  [lang="ar"] h3,
+  [lang="ar"] h4,
+  [lang="ar"] h5,
+  [lang="ar"] h6,
+  .font-arabic {
+    font-family: var(--font-arabic-display);
+  }
+
+  [lang="ar"] .text-xs { font-size: 0.95rem; }
+  [lang="ar"] .text-sm { font-size: 1.1rem; }
+
+  [lang="ar"] p {
+    font-size: 1.35em;
+    line-height: 1.8;
+  }
+
+  .dark {
+    --color-primary: #F4EFE6;
+    --color-on-primary: #2A1F17;
+    --color-secondary: #D6D3D1;
+    --color-on-secondary: #2A1F17;
+    --color-accent: #F59E0B;
+    --color-on-accent: #2A1F17;
+    --color-background: #2D2018;
+    --color-foreground: #F4EFE6;
+    --color-card: #38291F;
+    --color-card-foreground: #F4EFE6;
+    --color-muted: #453327;
+    --color-muted-foreground: #BDB5AE;
+    --color-border: #523F32;
+    --color-ring: #F4EFE6;
+  }
+  
+  .dark body {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(250, 250, 249, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(250, 250, 249, 0.03) 0px, transparent 50%);
+  }
+}
+
+@layer components {
+  /* Page gutters — wide, showroom-like margins */
+  .shell {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    max-width: 90rem;
+  }
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 3rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .shell {
+      padding-inline: 5rem;
+    }
+  }
+
+  /* The wordmark: tightly tracked geometric caps */
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+  }
+
+  /* Quiet underline link used through the editorial copy */
+  .rule-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+  }
+  .rule-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform-origin: right;
+    transform: scaleX(1);
+    transition: transform 0.6s var(--ease-soft);
+  }
+  .rule-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
