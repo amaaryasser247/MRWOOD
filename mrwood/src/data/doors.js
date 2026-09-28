@@ -18,7 +18,7 @@ export const doors = [
     name: "Luxury Grain 01",
     code: "MR-L001",
     category: "Luxury",
-    image: "/imgs/image-3.jfif"
+    image: "/imgs/3afteredit.jfif"
   },
   {
     id: 4,
@@ -197,48 +197,41 @@ export const doors = [
   },
   {
     id: 29,
-    name: "Interior French Glass",
-    code: "MR-I005",
-    category: "Interior",
-    image: "/imgs/29.jfif"
-  },
-  {
-    id: 30,
     name: "Modern Minimalist Edge",
     code: "MR-M009",
     category: "Modern",
     image: "/imgs/30.jfif"
   },
   {
-    id: 31,
+    id: 30,
     name: "Classic Timber Finish",
     code: "MR-C009",
     category: "Classic",
     image: "/imgs/31.jfif"
   },
   {
-    id: 32,
+    id: 31,
     name: "Luxury Majestic Oak",
     code: "MR-L009",
     category: "Luxury",
     image: "/imgs/32.jfif"
   },
   {
-    id: 33,
+    id: 32,
     name: "Interior Louver 01",
     code: "MR-I006",
     category: "Interior",
     image: "/imgs/33.jfif"
   },
   {
-    id: 34,
+    id: 33,
     name: "Modern Steel Fusion",
     code: "MR-M010",
     category: "Modern",
     image: "/imgs/34.jfif"
   },
   {
-    id: 35,
+    id: 34,
     name: "Classic Manor Arch",
     code: "MR-C010",
     category: "Classic",

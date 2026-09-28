@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import SectionTitle from '../components/SectionTitle';
 import DoorGallery from '../components/DoorGallery';
+import HowWeWorkSection from '../components/HowWeWorkSection';
 import { doors } from '../data/doors';
 import { site, whatsappLink } from '../data/site';
 import { useLang } from '../lib/LanguageContext';
@@ -109,7 +110,10 @@ export default function Home({ initialSection }) {
         </div>
       </section>
 
-      {/* 3. Doors Showcase Section (#doors) - Placed after About */}
+      {/* How We Work Section (#howWeWork) */}
+      <HowWeWorkSection />
+
+      {/* 3. Doors Showcase Section (#doors) - Placed after About & How We Work */}
       <section id="doors" className="py-24 md:py-32 shell scroll-mt-20">
         <div className="max-w-3xl mb-12 md:mb-16">
           <SectionTitle 

@@ -18,6 +18,7 @@ export default function Navbar() {
   const navLinks = [
     { name: t.nav.home, id: 'home' },
     { name: t.nav.about, id: 'about' },
+    { name: t.nav.howWeWork, id: 'howWeWork' },
     { name: t.nav.doors, id: 'doors' },
     { name: t.nav.contact, id: 'contact' },
   ];
@@ -27,7 +28,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 40);
 
       // Scrollspy logic: check current section
-      const sections = ['home', 'about', 'doors', 'contact'];
+      const sections = ['home', 'about', 'howWeWork', 'doors', 'contact'];
       const scrollPos = window.scrollY + 140;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -91,7 +92,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Nav - Larger font size */}
-        <nav className="hidden md:flex items-center gap-9 lg:gap-11">
+        <nav className="hidden lg:flex items-center gap-9 lg:gap-11">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -139,7 +140,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile: toggles + menu button */}
-        <div className="md:hidden flex items-center gap-3.5">
+        <div className="lg:hidden flex items-center gap-3.5">
           <button
             onClick={toggleTheme}
             className={`flex items-center justify-center w-7 h-7 rounded-full ${textColor} opacity-85 hover:opacity-100 transition-all border cursor-pointer ${
@@ -174,7 +175,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/70 backdrop-blur-2xl text-foreground border-b border-white/20 overflow-hidden shadow-2xl absolute top-full left-0 w-full"
+            className="lg:hidden bg-background/70 backdrop-blur-2xl text-foreground border-b border-white/20 overflow-hidden shadow-2xl absolute top-full left-0 w-full"
           >
             <nav className="flex flex-col px-7 py-7 gap-6">
               {navLinks.map((link) => {

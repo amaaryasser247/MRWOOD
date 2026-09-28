@@ -5,6 +5,7 @@ export const translations = {
       home: 'Home',
       about: 'About',
       doors: 'Doors',
+      howWeWork: 'How We Work',
       contact: 'Contact',
     },
     hero: {
@@ -44,6 +45,12 @@ export const translations = {
         { title: 'Bespoke Design', desc: 'Custom tailored to your architecture, dimensions, and personal aesthetic vision.' },
       ],
     },
+    howWeWork: {
+      subtitle: 'Our Process',
+      title: 'Before & After',
+      before: 'Before',
+      after: 'After',
+    },
     contact: {
       subtitle: 'Get In Touch',
       title: "Let's Create Something Beautiful",
@@ -81,6 +88,7 @@ export const translations = {
       home: 'الرئيسية',
       about: 'من نحن',
       doors: 'الأبواب',
+      howWeWork: 'إحنا إزاي بنشتغل',
       contact: 'تواصل معنا',
     },
     hero: {
@@ -119,6 +127,12 @@ export const translations = {
         { title: 'أخشاب فاخرة', desc: 'أخشاب طبيعية مختارة بعناية: أرو، جوز، زان، وقشور نبيلة مستوردة مستدامة.' },
         { title: 'تصميم مخصص', desc: 'تفصيل كامل حسب مساحتك وأبعاد مدخلك ورؤيتك المعمارية الخاصة.' },
       ],
+    },
+    howWeWork: {
+      subtitle: 'مراحل العمل',
+      title: 'إحنا إزاي بنشتغل',
+      before: 'قبل',
+      after: 'بعد الدهان',
     },
     contact: {
       subtitle: 'تواصل معنا',
